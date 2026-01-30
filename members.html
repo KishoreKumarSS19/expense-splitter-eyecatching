@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Group Members</title>
+    <link rel="stylesheet" href="members.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">💸</div>
+                <span>Expensy</span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Members</a></li>
+                <li><a href="#">Expenses</a></li>
+                <li><a href="#">Settlements</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <button class="btn-profile">
+                    <span class="online-status"></span>
+                    My Account
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div class="bg-blur"></div>
+    <div class="bg-blob"></div>
+
+    <div class="container">
+        <header class="hero">
+            <div class="badge">Expensy v2.0</div>
+            <h1 class="title">Split with <span>Style</span></h1>
+            <p class="subtitle">Managing your squad has never looked this good.</p>
+        </header>
+
+        <div class="glass-card add-section">
+            <div class="input-group">
+                <input type="text" id="memberInput" placeholder="Who's joining the fun?">
+                <button id="addBtn">
+                    Add Member
+                </button>
+            </div>
+        </div>
+
+        <section class="members-section">
+            <h2 class="section-title">The Squad</h2>
+            <div id="membersContainer" class="members-grid">
+                <div class="card">
+
+                    <h3 class="card-label">Active Squad</h3>
+
+                    <div id="membersContainer" class="members-grid">
+
+                        <div class="member-card">
+
+                            <div class="member-left">
+
+                                <div class="avatar">JD</div>
+
+                                <span class="member-name">John Doe</span>
+
+                            </div>
+
+                            <button class="remove-btn">Remove</button>
+                        </div>
+        </section>
+    </div>
+
+    <script src="members.js"></script>
+</body>
+
+</html>

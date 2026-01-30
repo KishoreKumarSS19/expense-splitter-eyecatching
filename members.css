@@ -1,0 +1,378 @@
+:root {
+    --accent: #ff3cac;
+    --accent-gradient: linear-gradient(225deg, #ff3cac 0%, #784ba0 50%, #2b86c5 100%);
+    --glass: rgba(255, 255, 255, 0.7);
+    --text: #d0d0df;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    background: #0f172a;
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+/* NAVBAR FIXES */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    background: rgba(15, 23, 42);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 100;
+}
+
+.nav-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo Styling */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: white;
+    cursor: pointer;
+}
+
+.logo-icon {
+    background: var(--accent-gradient);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 1.2rem;
+}
+
+/* The Horizontal Link List */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #94a3b8;
+    font-weight: 500;
+    padding: 10px 0;
+    position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: white;
+}
+
+/* The Animated Line under links */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent-gradient);
+    border-radius: 10px;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* Profile Button */
+.btn-profile {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-profile:hover {
+    background: white;
+    color: #0f172a;
+}
+
+.online-status {
+    width: 8px;
+    height: 8px;
+    background: #10b981;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #10b981;
+}
+
+/* Mobile Adjustments */
+.menu-toggle {
+    display: none;
+    /* Hidden on desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 850px) {
+    .nav-links {
+        display: none;
+    }
+
+    /* Hide links on mobile */
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* Body Padding Adjustment */
+.container {
+    margin-top: 100px;
+    /* Prevents the navbar from covering your content */
+}
+
+/* --- Animated Background Elements --- */
+.bg-blur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 30%, #4f46e5 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, #ff3cac 0%, transparent 40%);
+    z-index: -1;
+    filter: blur(80px);
+    opacity: 0.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    padding: 60px 20px;
+    z-index: 1;
+}
+
+/* --- Hero Section --- */
+.hero {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.title {
+    font-size: 3.5rem;
+    color: white;
+    font-weight: 800;
+    letter-spacing: -2px;
+}
+
+.title span {
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    color: #94a3b8;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+/* --- The Glass Card & Input --- */
+.glass-card {
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 24px;
+    padding: 10px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.input-group {
+    display: flex;
+    gap: 8px;
+}
+
+#memberInput {
+    flex: 1;
+    padding: 18px 25px;
+    border-radius: 18px;
+    border: none;
+    background: white;
+    font-size: 1.1rem;
+    outline: none;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+#addBtn {
+    background: var(--accent-gradient);
+    color: white;
+    border: none;
+    padding: 0 30px;
+    border-radius: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 20px rgba(255, 60, 172, 0.3);
+}
+
+/* --- Members Squad Section --- */
+.section-title {
+    color: white;
+    margin: 40px 0 20px;
+    font-size: 1.5rem;
+}
+
+.section-title span {
+    opacity: 0.5;
+    font-weight: 400;
+}
+
+.members-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* 1. The Main Card Container */
+.member-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px 15px;
+    /* Slightly reduced padding for a tighter look */
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    /* Centers everything in the card vertically */
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    min-height: 64px;
+    /* Fixes a consistent height for all cards */
+}
+
+/* 2. The Wrapper for Avatar + Name */
+.member-info {
+    display: flex;
+    align-items: center;
+    /* THIS is the key fix for the name alignment */
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+/* 3. The Avatar Wrapper (The Gradient Border) */
+.avatar-wrapper {
+    background: var(--accent-gradient);
+    padding: 2px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/* The Actual Avatar Box */
+.avatar {
+    background: #1a1a2e;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 0.9rem;
+    line-height: 1;
+}
+
+/* The Name Text */
+.name {
+    color: white;
+    font-weight: 600;
+     line-height: 40px;
+     display: flex;
+    align-items: center;
+}
+
+
+
+/*The Remove Button */
+.remove-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #ff4d4d;
+    padding: 6px 12px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.remove-btn:hover {
+    background: #ff4d4d;
+    color: white;
+}
+
+/* Mobile Fixes */
+@media (max-width: 600px) {
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .members-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .input-group {
+        flex-direction: column;
+    }
+
+    #addBtn {
+        padding: 18px;
+        justify-content: center;
+    }
+}
